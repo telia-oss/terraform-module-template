@@ -6,3 +6,4 @@ Use this module to scaffold a new one. Remember to change the following:
 
 - The build badge in the README.
 - [example.tf](examples/default/example.tf).
+- Fix [CODEOWNERS](CODEOWNERS).
