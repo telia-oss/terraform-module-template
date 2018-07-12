@@ -1,5 +1,3 @@
-OS=darwin
-DIR=$(shell pwd)
 
 default: test
 
@@ -20,7 +18,7 @@ test:
 			echo "✗ terraform validate failed: $$d"; \
 			exit 1; \
 		fi; \
-		cd $(DIR); \
+		cd $(CURDIR); \
 	done
 	@echo "√ terraform validate modules (not including variables)"; \
 
@@ -32,7 +30,7 @@ test:
 			echo "✗ terraform validate failed: $$d"; \
 			exit 1; \
 		fi; \
-		cd $(DIR); \
+		cd $(CURDIR); \
 	done
 	@echo "√ terraform validate examples"; \
 
