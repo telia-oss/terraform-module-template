@@ -5,7 +5,7 @@
 Use this module template to scaffold a new one. Remember to change the following:
 
 - [ ] The descriptions and build badges in this [README](README).
-- [ ] Any exmples in this section [examples](#examples).
+- [ ] Any examples in this section [examples](#examples).
 - [ ] Update [CODEOWNERS](CODEOWNERS).
 
 
