@@ -29,9 +29,8 @@ about: I have a suggestion (and might want to implement myself 🙂)!
 <!--- Information about code formatting: https://help.github.com/articles/basic-writing-and-formatting-syntax/#quoting-code --->
 
 ```hcl
-# Copy-paste your Terraform configurations here - for large Terraform configs,
-# please use a service like Dropbox and share a link to the ZIP file. For
-# security, you can also encrypt the files using our GPG public key.
+/* Copy-paste your Terraform configurations here, try to make a small easy to re-produce example, for more advanced examples it's possible to link to your branch on github or create a Gist and reference it here
+*/
 ```
 
 ### References

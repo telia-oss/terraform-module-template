@@ -23,8 +23,8 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 ### Checklist
 
 - [ ] `terraform fmt` and `terraform validate` both work from the root and `examples/` directories (look in CI for an example)
-- [ ] Tests for the changes have been added and passing (for bug fixes/features)
-- [ ] Test results are pasted in this PR (in lieu of CI)
+- [ ] Provide an updated example that utilizes newly created resources, or for more advanced additions a new example under the examples directory.
+- [ ] Example plan output in this PR (in lieu of CI)
 - [ ] Docs have been added/updated (for bug fixes/features)
 - [ ] Any breaking changes are noted in the description above
 - [ ] I have made corresponding changes to the documentation

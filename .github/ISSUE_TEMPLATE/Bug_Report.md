@@ -10,7 +10,6 @@ Before you publish a bug report, please make sure you have have made a reasonabl
 * Check the official documentation for the resource that errors to see whether you have configured it incorrectly, or it's being used incorrectly within the module.
 * Make sure you have the latest stable version of your cloud provider version and see if anything has change (which is related to the resource that errors) in newer releases of the provider.
 * Made sure you have performed validation (`terraform fmt`, `terraform validate` or `tflint`) against your terraform workspace.
-* Searched for any changes or issues regarding the terraform provider in question (eg. https://github.com/terraform-providers/terraform-provider-aws/blob/master/CHANGELOG.md)
 
 If you are running into one of these scenarios, we recommend you reaching out to the terraform community, see information further down.
 --->
@@ -40,9 +39,9 @@ If you are running into one of these scenarios, we recommend you reaching out to
 <!--- Information about code formatting: https://help.github.com/articles/basic-writing-and-formatting-syntax/#quoting-code --->
 
 ```hcl
-# Copy-paste your Terraform configurations here - for large Terraform configs,
-# please use a service like Dropbox and share a link to the ZIP file. For
-# security, you can also encrypt the files using our GPG public key: https://keybase.io/hashicorp
+/* Copy-paste your Terraform configurations here, try to make a small easy to re-produce example, for more advanced examples it's possible to link to your branch on github or create a Gist and reference it here
+*/
+
 ```
 
 ### Optional Debug Output

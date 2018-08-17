@@ -18,6 +18,3 @@ If you have a support request or question please submit them to one of these res
 * [Terraform community resources](https://www.terraform.io/docs/extend/community/index.html)
 
 * [HashiCorp support](https://support.hashicorp.com) (Terraform Enterprise customers)
-  
-**Telia Company** (Employee Support)
-* Public Cloud Team [Slack Channel](https://telianorge.slack.com/) at Telia Company

@@ -261,6 +261,7 @@ Not prefix all variable names with lambda_ when the this is mainly a lambda func
 
 __Only use a hyphen (`-`) when naming the component being created.__
 
+
  ```hcl
 resource "aws_security_group" "security_group" {
   name = "${var.resource_name}-security-group"
