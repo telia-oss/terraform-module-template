@@ -1,20 +1,20 @@
 ---
 name: 💬 Question
-about: If you have a question, please check out our community resources!
+about: If you have a question, please submit them here.
 
 ---
 
-# Questions
-
-Issues on GitHub are intended to be related to bugs or feature requests with provider codebase,
-so we recommend using our other community resources instead of asking here 👍.
-
----
-
-If you have a support request or question please submit them to one of these resources:
+<!--
+If you have a trouble, feel free to ask. Make sure you're not asking duplicate question by searching on the issues lists and have a look at the community resources below.
 
 **Community Support**
 
 * [Terraform community resources](https://www.terraform.io/docs/extend/community/index.html)
 
 * [HashiCorp support](https://support.hashicorp.com) (Terraform Enterprise customers)
+
+-->
+
+# Question
+
+If you have a question please submit them here.
