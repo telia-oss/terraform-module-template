@@ -22,7 +22,7 @@ Terraform module which creates *describe your intent* resources on AWS.
 
 ## Authors
 
-Currently maintained by [these contributors](graphs/contributors).
+Currently maintained by [these contributors](../../graphs/contributors).
 
 ## License
 
