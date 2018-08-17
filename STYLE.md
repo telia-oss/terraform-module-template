@@ -183,7 +183,7 @@ variable "public_subnet_id" {
 }
 ```
 
-Boolean variables should follow the underlying definition in order to make the exposure transparent, if exposing an underlying modules variables try to stay as  
+Boolean variables should follow the underlying definition in order to make the exposure transparent, if exposing an underlying modules variables try to stay as close to original modules declaration as possible.  
 
 ```hcl
 // bad
