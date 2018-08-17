@@ -237,24 +237,41 @@ variable "public_subnet_ids" {
 }
 ```
 
-Use variable names/descriptions from the official resource as much as possible.
+Use variable names/descriptions from the official resource as much as possible. If the documentation provides a description of the resource, such as for the example for target groups, reuse the description.
+
+| Argument         | Required | Description                                            |
+| ---------------- | -------- | ------------------------------------------------------ |
+| target_group_arn | Yes      | The ARN of the Target Group to which to route traffic. |
 
 ```hcl
-// good
-// todo example
-
 // bad
-// todo example
+output "target_group" {
+  description = "The target Group."
+  value       = "${module.grafana.target_group}"
+}
+
+// good
+output "target_group_arn" {
+  description = "The ARN of the Target Group."
+  value       = "${module.grafana.target_group_arn}"
+}
+
 ```
 
-Not prefix all variable names with lambda_ when the this is mainly a lambda function.
+Not prefix all variable with the type of the resource, as it's apparent from the resource type.
 
 ```hcl
-// good
-// todo example
-
 // bad
-// todo example
+resource "aws_s3_bucket" "s3_bucket_imagest" {
+  bucket = "${var.environment_name}-images-${var.aws_region}"
+  acl    = "private"
+}
+
+// good
+resource "aws_s3_bucket" "image_bucket" {
+  bucket = "${var.environment_name}-images-${var.aws_region}"
+  acl    = "private"
+}
 ```
 
 ### Resource Naming
