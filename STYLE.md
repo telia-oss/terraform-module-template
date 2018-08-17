@@ -15,7 +15,7 @@ Inspired by [The Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide) 
 
 Use 2 spaces when defining resources except when defining inline policies or other inline resources.
 
-```
+```hcl
 resource "aws_iam_role" "iam_role" {
   name = "${var.resource_name}-role"
   assume_role_policy = <<EOF
@@ -103,37 +103,64 @@ Attributes exported by your modules should follow the same descriptive format as
 
 Only comment what is necessary.
 
-Single line comments: `#` or `//`.
+Single line comments: `#` .
 
 Multi-line comments: `/*` followed by `*/`.
 
 When commenting use two "//" and a space in front of the comment.
 
-```
-// CREATE ELK IAM ROLE 
+```hcl
+# CREATE ELK IAM ROLE 
 ...
 ```
 
 ## Naming Conventions
 
-### File Names
+### File Names and Structure
 
-Create a separate resource file for each type of AWS resource. Similar resources should be defined in the same file and named accordingly.
+We strongly recommend that terraform modules and resources are grouped in a feature-based structure, this means that you should always strive to start with main.tf and split your resources into features, where each file groups a set of resources.
 
+If your module is less complex, please attempt to flatten the directory structure
+
+```shell
+$ tree minimal-module/
+.
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
 ```
-ami.tf
-autoscaling_group.tf
-cloudwatch.tf
-iam.tf
-launch_configuration.tf
-providers.tf
-s3.tf
-security_groups.tf
-sns.tf
-sqs.tf
-user_data.sh
-variables.tf
+
+For a complex module, resource creation may be split into multiple files but all nested module usage should be in the main file. variables.tf and outputs.tf should contain the declarations for variables and outputs, respectively.
+
+Nested modules should exist under the modules/ subdirectory, global resources such as policy declarations should be declared in a standalone file (e.g. policies.tf).
+
+```shell
+$ tree module/
+.
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── policies.tf
+├── ...
+├── modules/
+│   ├── nestedA/
+│   │   ├── README.md
+│   │   ├── variables.tf
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   ├── nestedB/
+│   ├── .../
+├── examples/
+│   ├── default/
+│   │   ├── main.tf
+        .../
+│   ├── advanced/
+│   ├── .../
 ```
+
+For more information see the official styleguide for Terraform.
 
 ### Parameter, Meta-parameter and Variable Naming
 
@@ -156,18 +183,15 @@ variable "public_subnet_id" {
 }
 ```
 
-Boolean variables should follow the idiomatic pattern `is_<condition>`
+Boolean variables should follow the underlying definition in order to make the exposure transparent, if exposing an underlying modules variables try to stay as  
 
 ```hcl
 // bad
 variable "public" {}
 
-// bad
-variable "is_public" {
-  description = "Is the subnet public?"
-  type        = "string"
+variable "task_container_assign_public_ip" {
+  description = "Assigned public IP to the container."
   default     = "false"
-}
 ```
 
 Terraform resources usually have an ID or some other attribute associated with them.  Variables for modules should refer to these attributes and match the actual name as much as possible.
