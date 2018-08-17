@@ -5,15 +5,14 @@ about: If something isn't working as expected 🤔.
 ---
 
 <!---
-Please note the following potential times when an issue might be in Terraform core:
+Before you publish a bug report, please make sure you have have made a reasonable effort to eliminate any outside causes.
 
-* [Configuration Language](https://www.terraform.io/docs/configuration/index.html) or resource ordering issues
-* [State](https://www.terraform.io/docs/state/index.html) and [State Backend](https://www.terraform.io/docs/backends/index.html) issues
-* [Provisioner](https://www.terraform.io/docs/provisioners/index.html) issues
-* [Registry](https://registry.terraform.io/) issues
-* Spans resources across multiple providers
+* Check the official documentation for the resource that errors to see whether you have configured it incorrectly, or it's being used incorrectly within the module.
+* Make sure you have the latest stable version of your cloud provider version and see if anything has change (which is related to the resource that errors) in newer releases of the provider.
+* Made sure you have performed validation (`terraform fmt`, `terraform validate` or `tflint`) against your terraform workspace.
+* Searched for any changes or issues regarding the terraform provider in question (eg. https://github.com/terraform-providers/terraform-provider-aws/blob/master/CHANGELOG.md)
 
-If you are running into one of these scenarios, we recommend opening an issue in the [Terraform core repository](https://github.com/hashicorp/terraform/) instead.
+If you are running into one of these scenarios, we recommend you reaching out to the terraform community, see information further down.
 --->
 
 <!--- Please keep this note for the community --->
@@ -46,17 +45,9 @@ If you are running into one of these scenarios, we recommend opening an issue in
 # security, you can also encrypt the files using our GPG public key: https://keybase.io/hashicorp
 ```
 
-### Debug Output
+### Optional Debug Output
 
-<!---
-Please provide a link to a GitHub Gist containing the complete debug output. Please do NOT paste the debug output in the issue; just paste a link to the Gist.
-
-To obtain the debug output, see the [Terraform documentation on debugging](https://www.terraform.io/docs/internals/debugging.html).
---->
-
-### Panic Output
-
-<!--- If Terraform produced a panic, please provide a link to a GitHub Gist containing the output of the `crash.log`. --->
+<!--- If Terraform produce any general errors, please provide them here --->
 
 ### Expected Behavior
 

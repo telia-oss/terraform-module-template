@@ -1,4 +1,4 @@
-#Telia Company Terraform Style Guide
+# Telia Company Terraform Style Guide
 
 ## Introduction
 
@@ -9,6 +9,7 @@ Inspired by [The Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide) 
 ## Syntax
 
 - Strings are in double-quotes.
+- Booleans are in double-quotes.
 
 ### Spacing
 
@@ -35,7 +36,7 @@ EOF
 }
 ```
 
-There should be two blank lines between resource definitions.
+There should be one blank lines between resource definitions.
 
 ```hcl
 // bad
@@ -59,8 +60,6 @@ variable "public_subnet_ids" {
   default     = []
 }
 ```
-
-
 
 ### Resource Block Alignment
 
@@ -87,6 +86,7 @@ resource "aws_security_group" "main" {
   }
 }
 ```
+
 ### Variables
 
 Variables should be provided in a `variables.tf` file at the root of your module.
@@ -139,7 +139,7 @@ variables.tf
 
  Only use an underscore (`_`) when naming Terraform resources like TYPE/NAME parameters and variables.
 
- ```
+ ```hcl
 resource "aws_security_group" "security_group" {
 ...
  ```
@@ -166,7 +166,7 @@ variable "public" {}
 variable "is_public" {
   description = "Is the subnet public?"
   type        = "string"
-  default     = false
+  default     = "false"
 }
 ```
 
@@ -233,11 +233,11 @@ Not prefix all variable names with lambda_ when the this is mainly a lambda func
 // todo example
 ```
 
-###Resource Naming
+### Resource Naming
 
 __Only use a hyphen (`-`) when naming the component being created.__
 
- ```
+ ```hcl
 resource "aws_security_group" "security_group" {
   name = "${var.resource_name}-security-group"
 ...
@@ -245,20 +245,20 @@ resource "aws_security_group" "security_group" {
 
 __A resource's NAME should be the same as the TYPE minus the provider.__
 
-```
+```hcl
 resource "aws_autoscaling_group" "autoscaling_group" {
 ...
 ```
 
 If there are multiple resources of the same TYPE defined, add a minimalistic identifier to differentiate between the two resources. A blank line should sperate resource definitions contained in the same file.
 
-```
+```hcl
 // Create Data S3 Bucket
 resource "aws_s3_bucket" "data_s3_bucket" {
   bucket = "${var.environment_name}-data-${var.aws_region}"
   acl    = "private"
   versioning {
-    enabled = true
+    enabled = "true"
   }
 }
 
