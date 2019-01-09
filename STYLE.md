@@ -4,7 +4,7 @@
 
 This guide gives developers a guidance in the coding conventions used by Telia Company  for Terraform's HashiCorp Configuration Language (HCL). Terraform allows infrastructure to be described as code, which in turns makes changes and implementations of readable in a structured way. As such, we should adhere to a style guide to ensure readable and high quality code. As Terraform utilises [HCL](https://github.com/hashicorp/hcl), you may wish to take a detailed look at its [syntax guide](https://github.com/hashicorp/hcl/blob/master/README.md#syntax) for further guidance.
 
-Inspired by [The Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide) and [The Puppet Style Guide](https://docs.puppetlabs.com/guides/style_g uide.html).
+Inspired by [The Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide) and [The Puppet Style Guide](https://docs.puppetlabs.com/guides/style_guide.html).
 
 ## Syntax
 

@@ -1,0 +1,39 @@
+jobs:
+  - name: test-default
+    plan:
+      - aggregate:
+        - get: this-module
+          trigger: true
+      - task: apply
+        params:
+          directory: default
+          AWS_ACCOUNT_ID: ((telia-divx-common-services-stage-account-id))
+          AWS_ACCESS_KEY_ID: ((telia-divx-common-services-stage-access-key))
+          AWS_SECRET_ACCESS_KEY: ((telia-divx-common-services-stage-secret-key))
+          AWS_SESSION_TOKEN: ((telia-divx-common-services-stage-session-token))
+          KMS_KEY_ID: ((telia-divx-common-services-stage-state-bucket-key))
+        file: this-module/.ci/tasks/apply/task.yml
+        input_mapping: {source: this-module}
+      - task: test
+        params:
+          directory: default
+          AWS_ACCESS_KEY_ID: ((telia-divx-common-services-stage-access-key))
+          AWS_SECRET_ACCESS_KEY: ((telia-divx-common-services-stage-secret-key))
+          AWS_SESSION_TOKEN: ((telia-divx-common-services-stage-session-token))
+        file: this-module/.ci/tasks/test/task.yml
+      - task: destroy
+        params:
+          directory: default
+          AWS_ACCESS_KEY_ID: ((telia-divx-common-services-stage-access-key))
+          AWS_SECRET_ACCESS_KEY: ((telia-divx-common-services-stage-secret-key))
+          AWS_SESSION_TOKEN: ((telia-divx-common-services-stage-session-token))
+        file: this-module/.ci/tasks/destroy/task.yml
+
+resources:
+  - name: this-module
+    type: git
+    source:
+      uri: git@github.com:telia-oss/terraform-module-template.git
+      branch: testingpipeline
+      private_key: ((aws-common-services-deploy-key))
+
