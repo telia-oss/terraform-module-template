@@ -1,4 +1,4 @@
-name: taskfile
+name: workflow
 
 on: [push]
 

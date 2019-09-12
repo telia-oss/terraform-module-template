@@ -12,8 +12,7 @@ Use this module template to scaffold a new one. Remember to change the following
 
 # Terraform Template Module
 
-[![Build Status](https://travis-ci.com/telia-oss/terraform-module-template.svg?branch=master)](https://travis-ci.com/telia-oss/terraform-module-template)
-![](https://img.shields.io/maintenance/yes/2018.svg)
+[![workflow](https://github.com/telia-oss/terraform-module-template/workflows/workflow/badge.svg)](https://github.com/telia-oss/terraform-module-template/actions)
 
 Terraform module which creates *describe your intent* resources on AWS.
 
