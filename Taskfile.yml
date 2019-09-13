@@ -28,7 +28,7 @@ tasks:
     silent: true
     env:
       DIRECTORIES:
-        sh: find . -type f -name '*.tf' -not -path "**/.terraform/*" -exec dirname {} \; | sort -u
+        sh: find . -type f -name '*.tf' -not -path "**/.terraform/*" -print0 | xargs -0I {} dirname {} | sort -u
     cmds:
     - |
       BOLD=$(tput bold)
