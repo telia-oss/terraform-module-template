@@ -15,6 +15,10 @@ main() {
         exit 1
     fi
 
+    cd "${TAR}"
+    git checkout master
+    git pull
+
     if [ ! -d "${TAR}/.github" ]; then
         # Copy entire directory if it does not exist.
         cp -r "${SRC}/.github" "${TAR}/.github"
@@ -78,14 +82,12 @@ main() {
     fi
 
     # Fix go module
-    cd "${TAR}"
-    if [ ! -f "go.mod" ]; then
+    if [ ! -f "${TAR}/go.mod" ]; then
         go mod init
     fi
     # Build (update dependencies) and tidy
     go build ./test
     go mod tidy
-    cd "${SRC}"
 
     # Add examples if missing
     for d in examples/basic examples/complete; do
@@ -99,14 +101,11 @@ main() {
         fi
     done
 
-    cd "${TAR}"
     if [[ -n $(git ls-files -m) ]]; then 
-        git pull
         git checkout -B module-template-updates
         git add .
         git commit -m "Updates from module template: ${REF}"
     fi
-    cd "${SRC}"
 }
 
 main $1
