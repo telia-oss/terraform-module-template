@@ -5,3 +5,6 @@ crash.log
 
 # InteliJ IDE
 .idea/
+
+# Taskfile
+.task/
