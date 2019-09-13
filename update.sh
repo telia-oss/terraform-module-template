@@ -3,6 +3,7 @@
 set -euo pipefail
 
 SRC=$PWD
+REF=$(git rev-parse --short HEAD)
 
 main() {
     set +u
@@ -90,7 +91,7 @@ main() {
     for d in examples/basic examples/complete; do
         if [ ! -d "${TAR}/${d}" ]; then
             set +e
-            rm -rf "${SRC}/${d}/.terraform" && rm "${SRC}/${d}/*.tfstate*"
+            rm -rf "${SRC}/${d}/.terraform" && rm "${SRC}/${d}/terraform.tfstate*"
             set -e
             cp -r "${SRC}/${d}" "${TAR}/${d}"
         else
@@ -103,7 +104,7 @@ main() {
         git pull
         git checkout -B module-template-updates
         git add .
-        git commit -m "Updates from module template"
+        git commit -m "Updates from module template: ${REF}"
     fi
     cd "${SRC}"
 }
