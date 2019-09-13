@@ -2,11 +2,9 @@
 
 set -euo pipefail
 
-DIR=$PWD
+SRC=$PWD
 
 main() {
-    SRC="${PWD}"
-
     set +u
     TAR="${1}"
     set -u
@@ -54,8 +52,8 @@ main() {
     done
 
     # Remove old test harness
-    rm -rf "${DIR}/.ci" 2> /dev/null
-    for f in "${DIR}"/examples/*/test.sh; do
+    rm -rf "${TAR}/.ci" 2> /dev/null
+    for f in "${TAR}"/examples/*/test.sh; do
         rm "${f}" 2> /dev/null
     done
     set -e
@@ -99,6 +97,15 @@ main() {
             cp "${SRC}/${d}/README.md" "${TAR}/${d}/README.md"
         fi
     done
+
+    cd "${TAR}"
+    if [[ -n $(git ls-files -m) ]]; then 
+        git pull
+        git checkout -B module-template-updates
+        git add .
+        git commit -m "Updates from module template"
+    fi
+    cd "${SRC}"
 }
 
 main $1
