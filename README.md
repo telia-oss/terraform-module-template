@@ -2,7 +2,9 @@
 
 # Terraform module template 
 
-[![Latest Release](https://img.shields.io/github/release/telia-oss/terraform-module-template.svg?style=flat-square)](https://github.com/telia-oss/terraform-module-template/releases/latest) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftelia-oss%2Fterraform-module-template%2Fbadge&style=flat-square&label=build)](https://github.com/telia-oss/terraform-module-template/actions?query=workflow%3Atest)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/itsdalmo/gotemplate)
+[![latest release](https://img.shields.io/github/v/release/telia-oss/terraform-module-template?style=flat-square)](https://github.com/telia-oss/terraform-module-template/releases/latest)
+[![build status](https://img.shields.io/github/workflow/status/telia-oss/terraform-module-template/workflow?label=build&logo=github&style=flat-square)](https://github.com/telia-oss/terraform-module-template/actions?query=workflow%3Atest)
 
 Terraform module which creates *describe your intent* resources on AWS.
 
