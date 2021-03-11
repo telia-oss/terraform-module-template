@@ -19,7 +19,7 @@ jobs:
 
     - name: Install Terraform
       uses: hashicorp/setup-terraform@v1 
-      with: { terraform_version: 0.12.24 }
+      with: { terraform_version: 0.14.7 }
 
     - name: Install Taskfile
       run: curl -sL https://taskfile.dev/install.sh | sh
