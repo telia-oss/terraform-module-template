@@ -2,6 +2,7 @@
 **/.terraform
 **/*.tfstate*
 crash.log
+**/.*.*.hcl
 
 # InteliJ IDE
 .idea/
