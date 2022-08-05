@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "hashicorp.hcl",
+    "hashicorp.sentinel",
+    "hashicorp.terraform",
+    "hashicorp.terraform-preview",
+    "Mindginative.terraform-snippets",
+    "ms-vscode.azure-account",
+    "Run-at-scale.terraform-doc-snippets",
+    "darkriszty.markdown-table-prettify",
+    "davidanson.vscode-markdownlint",
+    "wayou.vscode-todo-highlight",
+    "yzhang.markdown-all-in-one",
+    "gruntfuggly.todo-tree"
+  ],
+  "unwantedRecommendations": []
+}
