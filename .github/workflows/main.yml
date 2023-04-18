@@ -1,6 +1,6 @@
 name: workflow
 
-on: 
+on:
   pull_request: {}
   push:
     branches:
@@ -10,19 +10,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Install Go
-      uses: actions/setup-go@v1
-      with: { go-version: 1.14 }
+      - name: Install Go
+        uses: actions/setup-go@v4
+        with: { go-version: 1.20 }
 
-    - name: Install Terraform
-      uses: hashicorp/setup-terraform@v1 
-      with: { terraform_version: 0.14.7 }
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with: { terraform_version: 1.4.4 }
 
-    - name: Install Taskfile
-      run: curl -sL https://taskfile.dev/install.sh | sh
+      - name: Install Task
+        uses: arduino/setup-task@v1
+        with: { version: 3.x }
 
-    - name: Run tests
-      run: ./bin/task test
+      - name: Run tests
+        run: task test
