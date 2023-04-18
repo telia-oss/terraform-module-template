@@ -1,7 +1,7 @@
 # Terraform module template
 
 [![latest release](https://img.shields.io/github/v/release/telia-oss/terraform-module-template?style=flat-square)](https://github.com/telia-oss/terraform-module-template/releases/latest)
-[![build status](https://img.shields.io/github/actions/workflow/status/telia-oss/terraform-module-template/main.yml?branch=master&logo=github&style=flat-square)](https://github.com/telia-oss/terraform-module-template/actions?query=workflow%3Atest)
+[![build status](https://img.shields.io/github/actions/workflow/status/telia-oss/terraform-module-template/main.yml?branch=master&logo=github&style=flat-square)](https://github.com/telia-oss/terraform-module-template/actions/workflows/main.yml)
 
 Terraform module which creates _describe your intent_ resources on AWS.
 
