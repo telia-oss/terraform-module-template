@@ -35,7 +35,7 @@ tasks:
     desc: Run tests for all Go code.
     silent: true
     cmds:
-      - gofmt -s -l -w .
+      - go fmt ./...
       - go vet -v ./...
 
   test-terraform:
