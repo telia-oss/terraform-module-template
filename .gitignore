@@ -1,8 +1,8 @@
 # Terraform
 **/.terraform
 **/*.tfstate*
+**/.terraform.lock.hcl
 crash.log
-**/.*.*.hcl
 
 # InteliJ IDE
 .idea/
