@@ -27,9 +27,10 @@ tasks:
       - go mod tidy
 
   clean-terraform:
-    desc: Clean the terraform environment (delete .terraform directories)
+    desc: Clean the terraform environment (remove terraform directories and files)
     cmds:
-      - rm -rf **/.terraform
+      - find . -type d -name .terraform -exec rm -rf {} +
+      - find . -type f -name .terraform.lock.hcl -delete
 
   test-go:
     desc: Run tests for all Go code.
